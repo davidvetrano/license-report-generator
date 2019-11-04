@@ -184,6 +184,10 @@ const generateReport = opts => {
     });
   }).then(licenses => {
     return licenses.map(info => {
+      if (info.licenses.type) {
+        info.licenses = [ info.licenses.type ];
+      }
+
       info.licenses = info.licenses.filter(licenseName => {
         return licenseName.toLowerCase() !== 'unlicensed';
       });
@@ -224,15 +228,9 @@ const generateReport = opts => {
     });
     return licenses;
   }).then(licenses => {
-    const rootPkg = require(path.resolve(opts.path, 'package.json'));
-    const pkg = {
-      name: rootPkg.name,
-      version: rootPkg.version
-    };
-
     const report = new Report();
     const compiledTemplate = _.template(opts.template);
-    const context = Object.assign({}, opts.context, {licenses, pkg});
+    const context = Object.assign({}, opts.context, {licenses});
     report.generated = compiledTemplate(context);
     report.warnings = warnings;
     return report;
