@@ -233,6 +233,7 @@ const generateReport = opts => {
     const context = Object.assign({}, opts.context, {licenses});
     report.generated = compiledTemplate(context);
     report.warnings = warnings;
+    report.licenses = licenses;
     return report;
   });
 };
