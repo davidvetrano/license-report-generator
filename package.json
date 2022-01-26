@@ -29,7 +29,7 @@
     "lodash.template": "^4.4.0",
     "lodash.uniq": "^4.5.0",
     "lodash.uniqby": "^4.7.0",
-    "nlf": "^2.0.1",
+    "nlf": "github:davidvetrano/nlf#7887269dad1003e0d5b4f91c427883286947b959",
     "npm-license": "^0.3.3",
     "package-license": "^0.4.1",
     "spdx-correct": "^3.0.0",
