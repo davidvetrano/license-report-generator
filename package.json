@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bower-json": "^0.8.1",
+    "bower-json": "^0.8.4",
     "lodash": "^4.17.10",
     "lodash.template": "^4.4.0",
     "lodash.uniq": "^4.5.0",
